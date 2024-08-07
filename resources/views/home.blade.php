@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         @foreach ($cars as $car)
-            <div class="col-4 p-2">
+            <div class="col-md-4 col-sm-6 p-2">
                 <div class="card">
                     <img src="{{ Storage::url($car->image) }}" class="object-fit-cover" alt="img" style="height: 200px">
 
