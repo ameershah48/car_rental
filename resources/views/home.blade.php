@@ -13,7 +13,7 @@
                         </h5>
                         <p class="card-text">
                             Seater: {{ $car->seater }} <br>
-                            Price: RM {{ $car->formattedPrice() }} <br>
+                            Price: {{ $car->formattedPrice() }} <br>
                         </p>
                         <a href="/rentals/create?car_id={{ $car->id }}" class="btn btn-primary">Rent Now</a>
                     </div>
