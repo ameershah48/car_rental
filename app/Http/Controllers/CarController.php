@@ -36,7 +36,7 @@ class CarController extends Controller
         $car->model = $request->model;
         $car->brand = $request->brand;
         $car->seater = $request->seater;
-        $car->price = $request->price;
+        $car->price = $request->price * 100;
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
