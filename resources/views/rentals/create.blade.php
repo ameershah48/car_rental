@@ -10,7 +10,7 @@
             </h5>
             <p class="card-text">
                 Seater: {{ $car->seater }} <br>
-                Price: RM {{ $car->price }} <br>
+                Price: RM {{ $car->formattedPrice() }} <br>
             </p>
         </div>
     </div>
