@@ -55,7 +55,7 @@ class RentalController extends Controller
         $rental = Rental::with(['car', 'user'])->findOrFail($id);
         $user = auth()->user();
 
-        if($user->id != $rental->user_id || $user->type != 'admin') {
+        if($user->id != $rental->user_id && $user->type != 'admin') {
             return redirect('/cars')->withErrors('Unauthorized action.');
         }
 
