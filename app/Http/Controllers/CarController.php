@@ -101,6 +101,11 @@ class CarController extends Controller
     public function delete($id)
     {
         $car = Car::findOrFail($id);
+
+        if ($car->image) {
+            Storage::delete($car->image);
+        }
+
         $car->delete();
 
         return redirect('/cars');
