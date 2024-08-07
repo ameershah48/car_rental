@@ -38,7 +38,7 @@
                                 {{ $car->seater }}
                             </td>
                             <td>
-                                {{ $car->price }}
+                                {{ $car->formattedPrice() }}
                             </td>
                             <td>
                                 <a href="/cars/{{ $car->id }}">

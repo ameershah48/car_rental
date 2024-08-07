@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row gap-4">
+    <div class="row">
         @foreach ($cars as $car)
-            <div class="col-4">
+            <div class="col-4 p-2">
                 <div class="card">
-                    <img src="http://placehold.it/200" class="object-fit-cover" alt="img" style="height: 200px">
+                    <img src="{{ Storage::url($car->image) }}" class="object-fit-cover" alt="img" style="height: 200px">
 
                     <div class="card-body">
                         <h5 class="card-title">

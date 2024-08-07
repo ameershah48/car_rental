@@ -18,4 +18,9 @@ class Rental extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function formattedPrice()
+    {
+        return 'RM ' . number_format($this->total_price / 100, 2);
+    }
 }

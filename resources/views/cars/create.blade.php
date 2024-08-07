@@ -6,8 +6,7 @@
 
     <div class="card-body">
 
-        <form action="/cars/create" method="post">
-
+        <form action="/cars/create" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
@@ -36,6 +35,13 @@
                     Price
                 </label>
                 <input type="number" class="form-control" id="price" name="price">
+            </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label">
+                    Image
+                </label>
+                <input type="file" class="form-control" id="image" name="image">
             </div>
 
             <div class="mb-3">

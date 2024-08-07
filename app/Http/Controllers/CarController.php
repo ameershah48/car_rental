@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CarController extends Controller
 {
@@ -28,6 +29,7 @@ class CarController extends Controller
             'brand' => 'required',
             'seater' => 'required',
             'price' => 'required',
+            'image' => 'nullable|image|max:2048',
         ]);
 
         $car = new Car;
@@ -35,6 +37,13 @@ class CarController extends Controller
         $car->brand = $request->brand;
         $car->seater = $request->seater;
         $car->price = $request->price;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $path = $image->storePublicly('cars');
+            $car->image = $path;
+        }
+
         $car->save();
 
         return redirect('/cars');
@@ -65,6 +74,7 @@ class CarController extends Controller
             'brand' => 'required',
             'seater' => 'required',
             'price' => 'required',
+            'image' => 'nullable|image|max:2048',
         ]);
 
         $car = Car::findOrFail($id);
@@ -72,6 +82,17 @@ class CarController extends Controller
         $car->brand = $request->brand;
         $car->seater = $request->seater;
         $car->price = $request->price;
+
+        if ($request->hasFile('image')) {
+            if ($car->image) {
+                Storage::delete($car->image);
+            }
+
+            $image = $request->file('image');
+            $path = $image->storePublicly('cars');
+            $car->image = $path;
+        }
+
         $car->save();
 
         return redirect('/cars/' . $id);

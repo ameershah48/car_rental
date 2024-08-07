@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card">
-        <img src="http://placehold.it/200" class="object-fit-cover" alt="img" style="height: 300px">
+        <img src="{{ Storage::url($car->image) }}" class="object-fit-cover" alt="img" style="height: 200px">
 
         <div class="card-body">
             <h5 class="card-title">

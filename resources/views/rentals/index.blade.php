@@ -35,7 +35,7 @@
                                 {{ $rental->status }}
                             </td>
                             <td>
-                                {{ $rental->total_price }}
+                                {{ $rental->formattedPrice() }}
                             </td>
 
                             <td>

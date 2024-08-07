@@ -15,7 +15,7 @@
     </div>
 
     <div class="mt-3 card">
-        <img src="http://placehold.it/200" class="object-fit-cover" alt="img" style="height: 300px">
+        <img src="{{ Storage::url($rental->car->image) }}" class="object-fit-cover" alt="img" style="height: 200px">
 
         <div class="card-body">
             <h5 class="card-title">

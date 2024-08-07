@@ -18,6 +18,7 @@ return new class extends Migration
             $table->tinyInteger('seater');
             $table->integer('price');
             $table->boolean('is_available')->default(true);
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
