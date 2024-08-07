@@ -7,7 +7,7 @@
                 Rental - {{ $rental->id }}
             </h5>
             <p class="card-text">
-                Total Price: RM {{ $rental->formattedPrice() }} <br>
+                Total Price: {{ $rental->formattedPrice() }} <br>
                 Start Date: {{ $rental->start_date }} <br>
                 End Date: {{ $rental->end_date }}
             </p>
