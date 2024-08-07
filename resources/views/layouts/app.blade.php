@@ -41,6 +41,10 @@
 
                             @if (auth()->user()->type == 'admin')
                                 <li class="nav-item">
+                                    <a class="nav-link" href="/users">Users</a>
+                                </li>
+
+                                <li class="nav-item">
                                     <a class="nav-link" href="/cars">Cars</a>
                                 </li>
 

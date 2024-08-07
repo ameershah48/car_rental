@@ -14,6 +14,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/my_rentals', [App\Http\Controllers\HomeController::class, 'my_rentals'])->name('my_rentals');
 
     Route::group(['middleware' => CheckIfAdmin::class], function () {
+        Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+        Route::get('/users/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('users.show');
+
         Route::get('/cars', [App\Http\Controllers\CarController::class, 'index'])->name('cars.index');
         Route::get('/cars/create', [App\Http\Controllers\CarController::class, 'create'])->name('cars.create');
         Route::post('/cars/create', [App\Http\Controllers\CarController::class, 'store'])->name('cars.store');
