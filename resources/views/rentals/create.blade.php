@@ -9,6 +9,7 @@
                 {{ $car->model }}
             </h5>
             <p class="card-text">
+                Brand: {{ $car->brand }} <br>
                 Seater: {{ $car->seater }} <br>
                 Price: {{ $car->formattedPrice() }} <br>
             </p>
