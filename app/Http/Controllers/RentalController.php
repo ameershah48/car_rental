@@ -29,6 +29,12 @@ class RentalController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'car_id' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+        ]);
+
         $total_days = Carbon::parse($request->start_date)->diffInDays(Carbon::parse($request->end_date)) + 1;
         $car = Car::findOrFail($request->car_id);
         $total_price = $car->price * $total_days;

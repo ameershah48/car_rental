@@ -23,6 +23,13 @@ class CarController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'model' => 'required',
+            'brand' => 'required',
+            'seater' => 'required',
+            'price' => 'required',
+        ]);
+
         $car = new Car;
         $car->model = $request->model;
         $car->brand = $request->brand;
@@ -53,6 +60,13 @@ class CarController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'model' => 'required',
+            'brand' => 'required',
+            'seater' => 'required',
+            'price' => 'required',
+        ]);
+
         $car = Car::findOrFail($id);
         $car->model = $request->model;
         $car->brand = $request->brand;
