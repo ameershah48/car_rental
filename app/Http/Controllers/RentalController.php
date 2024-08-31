@@ -74,7 +74,9 @@ class RentalController extends Controller
         $car->is_available = false;
         $car->save();
 
-        return redirect('/rentals/' . $rental->id);
+        return view('rentals.pay', [
+            'rental' => $rental
+        ]);
     }
 
     public function cancel($id)

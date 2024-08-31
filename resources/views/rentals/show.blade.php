@@ -2,19 +2,6 @@
 
 @section('content')
     <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">
-                Rental - {{ $rental->id }}
-            </h5>
-            <p class="card-text">
-                Total Price: {{ $rental->formattedPrice() }} <br>
-                Start Date: {{ $rental->start_date }} <br>
-                End Date: {{ $rental->end_date }}
-            </p>
-        </div>
-    </div>
-
-    <div class="mt-3 card">
         <img src="{{ Storage::url($rental->car->image) }}" class="object-fit-cover" alt="img" style="height: 200px">
 
         <div class="card-body">
@@ -27,6 +14,21 @@
             </p>
         </div>
     </div>
+
+    <div class="mt-3 card">
+        <div class="card-body">
+            <h5 class="card-title">
+                #{{ $rental->id }} Car Rental
+            </h5>
+            <p class="card-text">
+                Total Price: {{ $rental->formattedPrice() }} <br>
+                Start Date: {{ $rental->start_date }} <br>
+                End Date: {{ $rental->end_date }}
+            </p>
+        </div>
+    </div>
+
+
 
     <div class="mt-3 card">
         <div class="card-header">
